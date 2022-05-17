@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong>{{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+<h3>SignUp</h3>
+<form actions="/signup" method="post">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input type="text" id="username" name="username" placeholder="Create a username only letters and numbers" required>
+<br>
+     <label for="">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter your First Name: " required>
+<br>
+         <label for="">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter your Last Name: " required>
+<br>
+         <label for="">Email Address</label>
+    <input type="text" id="email" name="email" placeholder="Enter your Email Address: " required>
+<br>
+         <label for="">Password</label>
+    <input type="text" id="psswrd" name="psswrd" placeholder="Create a Password: " required>
+<br>
+         <label for="">Confirm your password</label>
+    <input type="text" id="psswrd2" name="psswrd2" placeholder="Confirm your password: " required>
+<br>
+    <button type="submit">Sign Up</button>
+<br>
+</form>
+</body>
+</html>
